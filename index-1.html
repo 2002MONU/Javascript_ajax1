@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax-1 Text file</title>
+</head>
+<body>
+        <button id="btn">Click Me</button>
+
+        <script>
+            document.getElementById('btn').addEventListener('click',loadtext);
+
+            function loadtext(){
+
+                let xhr = new XMLHttpRequestUpload();
+                console.log(xhr);
+
+                xhr.open('GET', 'monu.txt', true);
+
+                xhr.onload = function(){
+                    if(this.status == 200){
+                        console.log(this.responseText);
+                    }
+                };
+
+                xhr.send();
+            }
+        </script>
+</body>
+</html>
